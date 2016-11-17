@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <title>Scoredata Labs</title>
+           
+      <link href="https://s3-us-west-1.amazonaws.com/scoredata-labs/z_test_bootstrap.css" rel="stylesheet">
+      <link href="https://s3-us-west-1.amazonaws.com/scoredata-labs/z_metisMenu.css" rel="stylesheet">
+      <link href="https://s3-us-west-1.amazonaws.com/scoredata-labs/z_sb-admin-2.css" rel="stylesheet">
+      <link href="https://cdn.rawgit.com/ChiragAswani/fonts/master/font-awesome.min.css" rel="stylesheet">
+      <script>
+         function validateForm() {
+            var x = document.forms["diabeticApp"]["diabetics_pedigree_function"].value;
+            var q = document.forms["diabeticApp"]["Triceps_skin_fold_thickness"].value;
+            var w = document.forms["diabeticApp"]["num_pregnant"].value;
+            var e = document.forms["diabeticApp"]["glucose_concentration"].value;
+            var r = document.forms["diabeticApp"]["Diastolic_blood_pressure"].value;
+            var t = document.forms["diabeticApp"]["hr_serum_insulin"].value;
+            var y = document.forms["diabeticApp"]["BMI"].value;
+            var u = document.forms["diabeticApp"]["age"].value;
+            if (x == null || x == "" || x == " " || x > 3 || x < 0)
+            {
+               alert("One or more questions have been left unanswered or are not set to the required value");
+               return false;
+            }
+            if (q == null || q == "" || q == " " || q > 100 || q < 0)
+            {
+               alert("One or more questions have been left unanswered or are not set to the required value");
+               return false;
+            }
+            if (w == null || w == "" || x == " " || w > 20 || w < 0)
+            {
+               alert("One or more questions have been left unanswered or are not set to the required value");
+               return false;
+            }
+            if (e == null || e == "" || e == " " || e > 200 || e < 0)
+            {
+               alert("One or more questions have been left unanswered or are not set to the required value");
+               return false;
+            }
+            if (r == null || r == "" || r == " " || r > 200 || r < 0)
+            {
+               alert("One or more questions have been left unanswered or are not set to the required value");
+               return false;
+            }
+            if (t == null || t == "" || t == " " || t > 1000 || t < 0)
+            {
+               alert("One or more questions have been left unanswered or are not set to the required value");
+               return false;
+            }
+            if (y == null || y == "" || y == " " || y > 70 || y < 0)
+            {
+               alert("One or more questions have been left unanswered or are not set to the required value");
+               return false;
+            }
+            if (u == null || u == "" || u == " " || u > 100 || u < 1)
+            {
+               alert("One or more questions have been left unanswered or are not set to the required value");
+               return false;
+            }
+            if (diabeticApp.CHECKBOX_3.checked == false) 
+            {
+               alert ('Please read the disclaimer');
+               return false;
+            } 
+         }
+      </script>
+
+   </head>
+
+<body>
+      <div id="wrapper">
+         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+               <span class="sr-only">Toggle navigation</span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               </button>
+               <a class="navbar-brand" href="/index">
+               <img src="https://s3-us-west-1.amazonaws.com/scoredata-labs/scoredatalogo.png" alt="" height="25" width="150">
+               </a>
+            </div>
+            <div class="navbar-default sidebar" role="navigation">
+               <div class="sidebar-nav navbar-collapse">
+                  <ul class="nav" id="side-menu">
+                     <li class="sidebar-search">
+                        <div class="input-group custom-search-form">
+                           <input type="text" class="form-control" placeholder="Search...">
+                           <span class="input-group-btn">
+                           <button class="btn btn-default" type="button">
+                           <img src="https://s3-us-west-1.amazonaws.com/scoredata-labs/search.png" style="width:14px;height:14px;">
+                           </button>
+                           </span>
+                        </div>
+                     </li>
+                     <li>
+                        <a href="/index"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                     </li>
+                     <li>
+                        <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Healthcare<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                           <li>
+                              <a href="/diabetes" class="active">Diabetes</a>
+                           </li>
+                           <li>
+                              <a href="/BreastCancer">Breast Cancer</a>
+                           </li>
+                           <li>
+                              <a href="/hospitalreadmission">Hospital Readmission</a>
+                           </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                     </li>
+                     <li>
+                        <a href="#"><i class="fa fa-stack-overflow fa-fw"></i> Banking<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                           <li>
+                              <a href="/interestrate">Interest Rate</a>
+                           </li>
+                        </ul>
+                     </li>
+                     <li>
+                        <a href="/results">
+                        <i class="fa fa-stethoscope fa-fw">
+                        </i> Results</a>
+                     </li>
+                     <li>
+                        <a href="/aboutus">
+                        <i class="fa fa-user fa-fw">
+                        </i> About Us</a>
+                     </li>
+                  </ul>
+               </div>
+               <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+         </nav>
+         <div id="page-wrapper">
+            <div class="row">
+               <div class="col-lg-12">
+                  <h1 class="page-header">Diabetes</h1>
+               </div>
+               <!-- /.col-lg-12 -->
+            </div>
+            <div class="row">
+               <div class="col-lg-12">
+                  <div class="panel panel-success">
+                  <div class="panel-heading">
+                     Model Description
+                  </div>
+                  <!-- /.panel-heading -->
+                  <div class="panel-body">
+                     <p>Built through Scorefast, our diabetes model uses <a target="_blank" href="https://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes">The Pima Indians Data</a> to predict the chances of getting diagonised with diabetes.</p>
+                     <a target="_blank" class="btn btn-outline btn-success btn-lg btn-block" href="http://www.scoredata.com/blog">View Diabetes Blog</a>
+                  </div>
+                  <!-- /.panel-body -->
+               </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-6">
+               <div class="panel panel-info">
+                  <div class="panel-heading">
+                     Diabetes Predictor
+                  </div>
+                  <!-- /.panel-heading -->
+                  <div class="panel-body">
+                     <form name="diabeticApp" action="diabeticApp" method="post" class="col s12" onsubmit="return validateForm()">
+                        <div class="table-responsive">
+                           <table class="table">
+                              <thead>
+                                 <tr>
+                                    <th>Item</th>
+                                    <th>Value</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr>
+                                    <td>Diabetics Pedigree Function</td>
+                                    <td><input placeholder="(0-3)" name="diabetics_pedigree_function" id="diabetics_pedigree_function" type="number" min="0" max="3" class="validate valid" style="width: 170px;"></td>
+                                 </tr>
+                                 <tr>
+                                    <td>Triceps Skin Fold Thickness</td>
+                                    <td><input placeholder="(0-100)" name="Triceps_skin_fold_thickness" id="Triceps_skin_fold_thickness" type="number" min="0" max="100" class="validate valid" style="width: 170px;"></td>
+                                 </tr>
+                                 <tr>
+                                    <td>Number of Times Pregnant</td>
+                                    <td><input placeholder="(0-20)" name="num_pregnant" id="num_pregnant" type="number" min="0" max="20" class="validate valid" style="width: 170px;"></td>
+                                 </tr>
+                                 <tr>
+                                    <td>My Glucose Concentration</td>
+                                    <td><input placeholder="(0-200)" name="glucose_concentartion" id="glucose_concentration" type="number" min="0" max="200" class="validate valid" style="width: 170px;"></td>
+                                 </tr>
+                                 <tr>
+                                    <td>Diastolic Blood Pressure</td>
+                                    <td><input placeholder="(0-200)" name="Diastolic_blood_pressure" id="Diastolic_blood_pressure" type="number" min="0" max="200" class="validate valid" style="width: 170px;"></td>
+                                 </tr>
+                                 <tr>
+                                    <td>2 Hour Serum Insulin</td>
+                                    <td><input placeholder="(0-1000)" name="hr_serum_insulin" id="2hr_serum_insulin" type="number" min="0" max="1000" class="validate valid" style="width: 170px;"></td>
+                                 </tr>
+                                 <tr>
+                                    <td>BMI</td>
+                                    <td><input placeholder="(0-70)" name="BMI" id="BMI" type="number" min="0" max="70" class="validate valid" style="width: 170px;"></td>
+                                 </tr>
+                                 <tr>
+                                    <td>Age</td>
+                                    <td><input placeholder="(1-100)" name="age" id="age" type="number" min="1" max="100" class="validate valid" style="width: 170px;"></td>
+                                    <input placeholder="Any" type="hidden" name="diabetic" id="diabetic" type="number" value="1">
+                                 </tr>
+                                 <tr>
+                                    <td>
+                     <input type="CHECKBOX" id="CHECKBOX_3" value="...and The Other"> I have read the disclaimer
+                     </td>
+                     <td><class="waves-effect waves-light="" btn="" waves-input-wrapper"="" style=""><input class="btn btn-outline btn-info" type="SUBMIT" value="Submit">
+                     </class="waves-effect>
+                     </tr>
+                     </tbody>
+                     </table>
+                     </td>
+                     </div>
+                     </form>
+                     <!-- /.table-responsive -->
+                  </div>
+                  <!-- /.panel-body -->
+               </div>
+               <!-- /.panel -->
+               </div>
+               <div class="col-lg-6">
+               <div class="panel panel-warning">
+                  <div class="panel-heading">
+                     Learn More About Diabetes
+                  </div>
+                  <!-- /.panel-heading -->
+                  <a href= "http://www.learningaboutdiabetes.org/" target="_blank">
+                  <img src="https://s3-us-west-1.amazonaws.com/scoredata-labs/diabetes.jpg" alt="Mountain View" style="max-width:100%;
+                     max-height:100%;">
+                  </a>
+               </div>
+               </div>
+               <div class
+
+               ="col-lg-6">
+               <div class="panel panel-danger">
+                  <div class="panel-heading">
+                     Diabetes Model Disclaimer 
+                  </div>
+                  <div class="panel-body">
+                     <p>Our diabetes model is not designed to and does not provide medical advice or opinions and should be used for educational and research purposes only. </p>
+                     <!--testing -->
+                     <!--testing -->
+                     <button type="button" class="btn btn-outline btn-danger btn-lg btn-block" data-toggle="modal" data-target="#myModal">Open Disclaimer</button>
+               </div>
+            </div>
+         </div>
+      </div>
+      
+        <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"><h4>Disclaimer</h4></h4>
+        </div>
+        <div class="modal-body">
+          <p>This site does not provide medical advice. Consult your doctor for any health concerns</p>
+        </div>
+
+      </div>
+      
+    </div>
+   </div>
+
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script src="https://s3-us-west-1.amazonaws.com/scoredata-labs/bootstrap.js"></script>
+      <script src="https://s3-us-west-1.amazonaws.com/scoredata-labs/metisMenu.js"></script>
+      <script src="https://s3-us-west-1.amazonaws.com/scoredata-labs/sb-admin-2.js"></script>
+      <script src="https://s3-us-west-1.amazonaws.com/scoredata-labs/modal.js"></script>
+</body>
+</html>

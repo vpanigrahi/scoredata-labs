@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <title>SB Admin 2 - Bootstrap Admin Theme</title>
+      <!-- Bootstrap Core CSS -->
+      <link href="https://s3-us-west-1.amazonaws.com/scoredata-labs/z_test_bootstrap.css" rel="stylesheet">
+      <link href="https://s3-us-west-1.amazonaws.com/scoredata-labs/z_metisMenu.css" rel="stylesheet">
+      <link href="https://s3-us-west-1.amazonaws.com/scoredata-labs/z_sb-admin-2.css" rel="stylesheet">
+      <link href="https://cdn.rawgit.com/ChiragAswani/fonts/master/font-awesome.min.css" rel="stylesheet">
+      <script>
+         function validateForm() {
+            var x = document.forms["InterestApp"]["loan_amnt"].value;
+            var e = document.forms["InterestApp"]["installment"].value;
+            var r = document.forms["InterestApp"]["emp_length"].value;
+            var t = document.forms["InterestApp"]["annual_inc"].value;
+            var y = document.forms["InterestApp"]["zip_code"].value;
+            if (x == null || x == "" || x == " " || x < 0)
+            {
+               alert("One or more questions have been left unanswered or are not set to the required value");
+               return false;
+            }
+            if (e == null || e == "" || e == " " || e < 100 || e > 800)
+            {
+               alert("One or more questions have been left unanswered or are not set to the required value");
+               return false;
+            }
+            if (r == null || r == "" || r == " " || r > 10 || r < 1)
+            {
+               alert("One or more questions have been left unanswered or are not set to the required value");
+               return false;
+            }
+            if (t == null || t == "" || t == " " || t < 0)
+            {
+               alert("One or more questions have been left unanswered or are not set to the required value");
+               return false;
+            }
+            if (y == null || y == "" || y == " " || y < 0)
+            {
+               alert("One or more questions have been left unanswered or are not set to the required value");
+               return false;
+            }
+            if (InterestApp.CHECKBOX_3.checked == false) 
+            {
+               alert ('Please read the disclaimer');
+               return false;
+            } 
+         }
+      </script>
+   </head>
+   <body>
+      <div id="wrapper">
+      <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+               <span class="sr-only">Toggle navigation</span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               </button>
+               <a class="navbar-brand" href="/index">
+               <img src="https://s3-us-west-1.amazonaws.com/scoredata-labs/scoredatalogo.png" alt="" height="25" width="150">
+               </a>
+            </div>
+            <div class="navbar-default sidebar" role="navigation">
+               <div class="sidebar-nav navbar-collapse">
+                  <ul class="nav" id="side-menu">
+                     <li class="sidebar-search">
+                        <div class="input-group custom-search-form">
+                           <input type="text" class="form-control" placeholder="Search...">
+                           <span class="input-group-btn">
+                           <button class="btn btn-default" type="button">
+                           <img src="https://s3-us-west-1.amazonaws.com/scoredata-labs/search.png" style="width:14px;height:14px;">
+                           </button>
+                           </span>
+                        </div>
+                     </li>
+                     <li>
+                        <a href="/index"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                     </li>
+                     <li>
+                        <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Healthcare<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                           <li>
+                              <a href="/diabetes">Diabetes</a>
+                           </li>
+                           <li>
+                              <a href="/BreastCancer">Breast Cancer</a>
+                           </li>
+                           <li>
+                              <a href="/hospitalreadmission">Hospital Readmission</a>
+                           </li>
+                        </ul>
+                     </li>
+                     <li>
+                        <a href="#"><i class="fa fa-stack-overflow fa-fw"></i> Banking<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                           <li>
+                              <a href="/interestrate">Interest Rate</a>
+                           </li>
+                        </ul>
+                     </li>
+                     <li>
+                        <a href="/results">
+                        <i class="fa fa-stethoscope fa-fw">
+                        </i> Results</a>
+                     </li>
+                     <li>
+                        <a href="/aboutus">
+                        <i class="fa fa-user fa-fw">
+                        </i> About Us</a>
+                     </li>
+                  </ul>
+               </div>
+               <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+         </nav>
+      <div id="page-wrapper">
+      <div class="row">
+               <div class="col-lg-12">
+                  <h1 class="page-header">Interest Rate</h1>
+               </div>
+      <div class="row">
+               <div class="col-lg-12">
+               <div class="panel panel-success">
+                  <div class="panel-heading">
+                     Model Description
+                  </div>
+                  <!-- /.panel-heading -->
+                  <div class="panel-body">
+                     <p>Built through Scorefast, our interest rate model uses <a target="_blank" href="https://www.lendingclub.com/info/download-data.action">Lending Club Data </a> to predict the user's interest rate on a loan.</p>
+                     <a target="_blank" class="btn btn-outline btn-success btn-lg btn-block" href="http://www.scoredata.com/blog">View Interest Rate Blog</a>
+                  </div>
+                  <!-- /.panel-body -->
+               </div>
+               <!-- /.panel -->
+               </div>
+            </div>
+         <div class="row">
+            <div class="col-lg-12">
+               <div class="panel panel-info">
+                  <div class="panel-heading">
+                     Interest Rate Model
+                  </div>
+                  <div class="panel-body">
+                     <div class="row">
+                     <form name="InterestApp" action="InterestApp" onsubmit="return validateForm()" method="post" class="col s12">
+                        <div class="col-lg-6">
+                              <input type="hidden" class="form-control" name="id" id="id" value="0">
+                              <input type="hidden" class="form-control" name="member_id" id="member_id" value="0">
+                              <div class="form-group">
+                                 <label>Loan Amount</label>
+                                 <input class="form-control" name="loan_amt" id="loan_amnt" placeholder="Enter Loan Amount">
+                                 <input type="hidden" class="form-control" name="funded_amnt" id="funded_amnt" value="0">
+                                 <input type="hidden" class="form-control" name="funded_amnt_inv" id="funded_amnt_inv" value="0">
+                              </div>
+                              <div class="form-group">
+                                 <label>Term </label>
+                                 <label class="radio-inline">
+                                 <input type="radio" name="term" id="term" value="36" checked>36
+                                 </label>
+                                 <label class="radio-inline">
+                                 <input type="radio" name="r" id="term" value="60">60
+                                 </label>
+                              </div>
+                                 <input type="hidden" class="form-control" name="int_rate" id="int_rate" value="1">
+                              <div class="form-group">
+                                 <label>Installment</label>
+                                 <input class="form-control" name="installment" id="installment" placeholder="100-800">
+                              </div>
+
+                              
+                              <div class="form-group">
+                                 <label>Grade</label>
+                                 <div class="radio">
+                                    <label class="radio-inline">
+                                    <input type="radio" name="grade" id="grade" value="A" checked>700-800
+                                    </label>
+                                    <label class="radio-inline">
+                                    <input type="radio" name="grade" id="grade" value="B">600-700
+                                    </label> 
+                                 </div>
+                                 <div class="radio">
+                                    <label class="radio-inline">
+                                    <input type="radio" name="grade" id="grade" value="C">500-600
+                                    </label>
+                                    <label class="radio-inline">
+                                    <input type="radio" name="grade" id="grade" value="D">400-500
+                                    </label> 
+                                 </div>
+                                 <div class="radio">
+                                    <label class="radio-inline">
+                                    <input type="radio" name="grade" id="grade" value="E">300-400
+                                    </label>
+                                    <label class="radio-inline">
+                                    <input type="radio" name="grade" id="grade" value="F">200-300
+                                    </label> 
+                                 </div>
+                                 <input type="hidden" class="form-control" name="sub_grade" id="sub_grade" value="3">
+                              </div>
+                           <div class="form-group">
+                                <label>EMP Length</label>
+                                <input class="form-control" placeholder="1-10" name="emp_length" id="emp_length">
+                            </div>
+                            <center><input type="CHECKBOX" id="CHECKBOX_3" value="...and The Other"> I have read the disclaimer <center>
+                        </div>
+                        <div class="col-lg-6">
+
+                            <div class="form-group">
+                                <label>Home Ownership</label>
+                                    <select class="form-control" name="home_ownership" id="home_ownership">
+                                        <option>Rent</option>
+                                        <option>Own</option>
+                                        <option>Mortgage</option>
+                                    </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Annual Income</label>
+                                <input class="form-control" placeholder="Enter Annual Income" name="annual_inc" id="annual_inc">
+                            </div>
+                            <div class="form-group">
+                                <label>Verification Status</label>
+                                <select class="form-control" name="verification_status" id="verification_status">
+                                    <option>Verified- income</option>
+                                    <option>Verified- income source</option>
+                                    <option>Not verified</option>
+                                </select>
+                            </div>
+                            <input type="hidden" class="form-control" name="pymnt_plan" id="pymnt_plan" value="n">
+                            
+                            <div class="form-group">
+                                <label>Zip Code</label>
+                                <input class="form-control" placeholder="Enter Zip Code" name="zip_code" id="zip_code">
+                            </div>
+                            <div class="form-group">
+                                <label>State</label>
+                                <select class="form-control" name="addr_state" id="addr_state">
+                                    <option value="AL">Alabama</option>
+                                    <option value="AK">Alaska</option>
+                                    <option value="AZ">Arizona</option>
+                                    <option value="AR">Arkansas</option>
+                                    <option value="CA">California</option>
+                                    <option value="CO">Colorado</option>
+                                    <option value="CT">Connecticut</option>
+                                    <option value="DE">Delaware</option>
+                                    <option value="DC">District Of Columbia</option>
+                                    <option value="FL">Florida</option>
+                                    <option value="GA">Georgia</option>
+                                    <option value="HI">Hawaii</option>
+                                    <option value="ID">Idaho</option>
+                                    <option value="IL">Illinois</option>
+                                    <option value="IN">Indiana</option>
+                                    <option value="IA">Iowa</option>
+                                    <option value="KS">Kansas</option>
+                                    <option value="KY">Kentucky</option>
+                                    <option value="LA">Louisiana</option>
+                                    <option value="ME">Maine</option>
+                                    <option value="MD">Maryland</option>
+                                    <option value="MA">Massachusetts</option>
+                                    <option value="MI">Michigan</option>
+                                    <option value="MN">Minnesota</option>
+                                    <option value="MS">Mississippi</option>
+                                    <option value="MO">Missouri</option>
+                                    <option value="MT">Montana</option>
+                                    <option value="NE">Nebraska</option>
+                                    <option value="NV">Nevada</option>
+                                    <option value="NH">New Hampshire</option>
+                                    <option value="NJ">New Jersey</option>
+                                    <option value="NM">New Mexico</option>
+                                    <option value="NY">New York</option>
+                                    <option value="NC">North Carolina</option>
+                                    <option value="ND">North Dakota</option>
+                                    <option value="OH">Ohio</option>
+                                    <option value="OK">Oklahoma</option>
+                                    <option value="OR">Oregon</option>
+                                    <option value="PA">Pennsylvania</option>
+                                    <option value="RI">Rhode Island</option>
+                                    <option value="SC">South Carolina</option>
+                                    <option value="SD">South Dakota</option>
+                                    <option value="TN">Tennessee</option>
+                                    <option value="TX">Texas</option>
+                                    <option value="UT">Utah</option>
+                                    <option value="VT">Vermont</option>
+                                    <option value="VA">Virginia</option>
+                                    <option value="WA">Washington</option>
+                                    <option value="WV">West Virginia</option>
+                                    <option value="WI">Wisconsin</option>
+                                    <option value="WY">Wyoming</option>
+                                </select>
+                                <input type="hidden" class="form-control" name="dti" id="dti" value="15">
+                                <input type="hidden" class="form-control" name="pub_rec" id="pub_rec" value="0">
+                                <input type="hidden" class="form-control" name="policy_code" id="policy_code" value="1">
+                            </div>   
+                            <class="waves-effect waves-light="" btn="" waves-input-wrapper"="" style=""><input class="btn btn-outline btn-info btn-lg btn-block" type="SUBMIT" value="Submit"></class="waves-effect>
+                            
+
+                        <!-- /.col-lg-6 (nested) -->
+                        </div>
+                        </form>
+                        <!-- /.row (nested) -->
+                     </div>
+                     <!-- /.panel-body -->
+                  </div>
+
+               </div>
+               <div class="row">
+               <div class="col-lg-12">
+               <div class="panel panel-danger">
+                  <div class="panel-heading">
+                     Interest Rate Disclaimer
+                  </div>
+                  <!-- /.panel-heading -->
+                  <div class="panel-body">
+                     <p>Our Interest Rate Model does not and should not be the basis of a future interest on a given loan for a user.</p>
+                     <a target="_blank" class="btn btn-outline btn-danger btn-lg btn-block" href="http://www.bankrate.com/finance/mortgages/current-interest-rates.aspx">Learn More About Interest Rates</a>
+                  </div>
+                  <!-- /.panel-body -->
+               </div>
+               <!-- /.panel -->
+               </div>
+            </div>
+            </div>
+         </div>
+      </div>
+      </div>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script src="https://s3-us-west-1.amazonaws.com/scoredata-labs/bootstrap.js"></script>
+      <script src="https://s3-us-west-1.amazonaws.com/scoredata-labs/metisMenu.js"></script>
+      <script src="https://s3-us-west-1.amazonaws.com/scoredata-labs/sb-admin-2.js"></script>
+      <script src="https://s3-us-west-1.amazonaws.com/scoredata-labs/modal.js"></script>
+   </body>
+</html>

@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <title>Scoredata Labs</title>
+           
+      <link href="https://s3-us-west-1.amazonaws.com/scoredata-labs/z_test_bootstrap.css" rel="stylesheet">
+      <link href="https://s3-us-west-1.amazonaws.com/scoredata-labs/z_metisMenu.css" rel="stylesheet">
+      <link href="https://s3-us-west-1.amazonaws.com/scoredata-labs/z_sb-admin-2.css" rel="stylesheet">
+      <link href="https://cdn.rawgit.com/ChiragAswani/fonts/master/font-awesome.min.css" rel="stylesheet">
+      <link href="https://s3-us-west-1.amazonaws.com/scoredata-labs/myninjaslider.css" rel="stylesheet" type="text/css">
+      <script>
+         function validateForm() {
+
+            var x = document.forms["hospitalreadmission"]["time_in_hospital"].value;
+            var q = document.forms["hospitalreadmission"]["ic9Groupname"].value;
+            var w = document.forms["hospitalreadmission"]["ic9Groupname2"].value;
+            var e = document.forms["hospitalreadmission"]["ic9Groupname3"].value;
+            var r = document.forms["hospitalreadmission"]["num_lab_procedures"].value;
+            var t = document.forms["hospitalreadmission"]["num_medications"].value;
+            var y = document.forms["hospitalreadmission"]["age"].value;
+            var m = document.forms["hospitalreadmission"]["gender"].value;
+            var u = document.forms["hospitalreadmission"]["discharge_disposition_id"].value;
+            var i = document.forms["hospitalreadmission"]["diabetesMed"].value;
+            var o = document.forms["hospitalreadmission"]["insulin"].value;
+            var p = document.forms["hospitalreadmission"]["A1Cresult"].value;
+            var a = document.forms["hospitalreadmission"]["number_diagnoses"].value;
+            
+            if (x == null || x == "" || x == " " || x > 14 || x < 0 || x == "------")
+            {
+               alert("One or more questions have been left unanswered or are not set to the required value");
+               return false;
+            }
+            if (q == null || q == "" || q == " " || q == "------")
+            {
+               alert("One or more questions have been left unanswered or are not set to the required value");
+               return false;
+            }
+            if (w == null || w == "" || x == " " || w == "------")
+            {
+               alert("One or more questions have been left unanswered or are not set to the required value");
+               return false;
+            }
+            if (e == null || e == "" || e == " " || e == "------")
+            {
+               alert("One or more questions have been left unanswered or are not set to the required value");
+               return false;
+            }
+            if (r == null || r == "" || r == " " || r > 100 || r < 0 || r == "------")
+            {
+               alert("One or more questions have been left unanswered or are not set to the required value");
+               return false;
+            }
+            if (t == null || t == "" || t == " " || t > 100 || t < 0 || t == "------")
+            {
+               alert("One or more questions have been left unanswered or are not set to the required value");
+               return false;
+            }
+            if (y == null || y == "" || y == " "|| y == "------")
+            {
+               alert("One or more questions have been left unanswered or are not set to the required value");
+               return false;
+            }
+            if (m == null || t == "" || t == " " || t == "------")
+            {
+               alert("One or more questions have been left unanswered or are not set to the required value");
+               return false;
+            }
+            if (u == null || u == "" || u == " " || u == "------")
+            {
+               alert("One or more questions have been left unanswered or are not set to the required value");
+               return false;
+            }
+            if (i == null || i == "" || i == " " || i == "------")
+            {
+               alert("One or more questions have been left unanswered or are not set to the required value");
+               return false;
+            }
+            if (o == null || o == "" || o == " " || o == "------")
+            {
+               alert("One or more questions have been left unanswered or are not set to the required value");
+               return false;
+            }
+            if (p == null || p == "" || p == " " || p == "------")
+            {
+               alert("One or more questions have been left unanswered or are not set to the required value");
+               return false;
+            }
+            if (a == null || u == "" || u == " " || u > 16 || u < 1 || u == "------")
+            {
+               alert("One or more questions have been left unanswered or are not set to the required value");
+               return false;
+            }
+            if (hospitalreadmission.CHECKBOX_3.checked == false) 
+            {
+               alert ('Please read the disclaimer');
+               return false;
+            } 
+            
+         }
+      </script>
+
+
+   </head>
+
+   <body>
+      <div id="wrapper">
+         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+               <span class="sr-only">Toggle navigation</span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               </button>
+               <a class="navbar-brand" href="/index">
+               <img src="https://s3-us-west-1.amazonaws.com/scoredata-labs/scoredatalogo.png" alt="" height="25" width="150">
+               </a>
+            </div>
+            <div class="navbar-default sidebar" role="navigation">
+               <div class="sidebar-nav navbar-collapse">
+                  <ul class="nav" id="side-menu">
+                     <li class="sidebar-search">
+                        <div class="input-group custom-search-form">
+                           <input type="text" class="form-control" placeholder="Search...">
+                           <span class="input-group-btn">
+                           <button class="btn btn-default" type="button">
+                           <img src="https://s3-us-west-1.amazonaws.com/scoredata-labs/search.png" style="width:14px;height:14px;">
+                           </button>
+                           </span>
+                        </div>
+                     </li>
+                     <li>
+                        <a href="/index"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                     </li>
+                     <li>
+                        <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Healthcare<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                           <li>
+                              <a href="/diabetes">Diabetes</a>
+                           </li>
+                           <li>
+                              <a href="/BreastCancer">Breast Cancer</a>
+                           </li>
+                           <li>
+                              <a href="/hospitalreadmission" class="active">Hospital Readmission</a>
+                           </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                     </li>
+                     <li>
+                        <a href="#"><i class="fa fa-stack-overflow fa-fw"></i> Banking<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                           <li>
+                              <a href="/interestrate">Interest Rate</a>
+                           </li>
+                        </ul>
+                     </li>
+                     <li>
+                        <a href="/results">
+                        <i class="fa fa-stethoscope fa-fw">
+                        </i> Results</a>
+                     </li>
+                     <li>
+                        <a href="/aboutus">
+                        <i class="fa fa-user fa-fw">
+                        </i> About Us</a>
+                     </li>
+                  </ul>
+               </div>
+               <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+         </nav>
+         <div id="page-wrapper">
+            <div class="row">
+               <div class="col-lg-12">
+                  <h1 class="page-header">Hospital Readmission</h1>
+               </div>
+               <!-- /.col-lg-12 -->
+            </div>
+            <div class="row">
+               <div class="col-lg-12">
+               <div class="panel panel-success">
+                  <div class="panel-heading">
+                     Model Description
+                  </div>
+                  <!-- /.panel-heading -->
+                  <div class="panel-body">
+                     <p>Built through Scorefast, our hospital readmission model uses data from <a target="_blank" href="https://archive.ics.uci.edu/ml/datasets/Diabetes+130-US+hospitals+for+years+1999-2008">Virginia Commonwealth University</a> to predict the chances of get readmitted to a hospital.</p>
+                     <a target="_blank" class="btn btn-outline btn-success btn-lg btn-block" href="http://www.scoredata.com/predicting-hospital-readmission-rates-for-diabetic-patients-part-2/">View Hospital Readmission Blog</a>
+                  </div>
+                  <!-- /.panel-body -->
+               </div>
+               <!-- /.panel -->
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-12">
+               <div class="panel panel-info">
+                  <div class="panel-heading">
+                     Hospital Readmission Model
+                  </div>
+                  <div class="panel-body">
+                     <form name="hospitalreadmission" onsubmit="return validateForm()" action="hospitalreadmission" method="post" class="col s12">
+                     <div id="bg-asset"></div>
+                        <div id="ninja-slider">
+                        <div class="slider-inner">
+                           <ul>
+                              <li>
+                                 <div class="content">
+                                       <b><font face="Trebuchet MS" color=#FFA500 size="6">How many days did the patient stay in a hospital during the last visit?</font></b>
+                                       <br>
+                                       <br>
+                                       <br>
+                                       <br>
+                                       <input value="7" type="hidden" name="admission_source_id" id="admission_source_id" type="number" class="form-control" style="text-align:center;">
+                                       <font size="3" color="black"><input placeholder="0-14" name="time_in_hospital" id="time_in_hospital" type="number" class="form-control" min="0" max="14" style="text-align:center;"></font>
+                                 </div>
+                              </li>
+                              <li>
+                                 <div class="content">
+                                       <b><font face="Trebuchet MS" color=#FFA500 size="6">What is patient’s primary diagnosis?</font></b>
+                                       <br>
+                                       <br>
+                                       <br>
+                                       <br>
+                                       <select class="form-control" name="ic9Groupname" id="ic9Groupname">
+                                                <option>------</option>
+                                                <option>Circulatory</option>
+                                                <option>Diabetics</option>
+                                                <option>Genitourinary</option>
+                                                <option>Injury</option>
+                                                <option>Musculoskeletal</option>
+                                                <option>Respiratory</option>
+                                                <option>Other</option>
+                                            </select>
+                                       <input value="Internal Mediciine" type="hidden" name="physician_speciality" id="physician_speciality" type="text" class="form-control" style="text-align:center;">
+
+                                 </div>
+                              </li>
+                              <li>
+                                 <div class="content">
+                                       <b><font face="Trebuchet MS" color=#FFA500 size="6">What is patient’s secondary diagnosis?</font></b>
+                                       <br>
+                                       <br>
+                                       <br>
+                                       <br>
+                                       <select class="form-control" name="ic9Groupname2" id="ic9Groupname2">
+                                                <option>------</option>
+                                                <option>Circulatory</option>
+                                                <option>Diabetics</option>
+                                                <option>Digestive</option>
+                                                <option>Genitourinary</option>
+                                                <option>Injury</option>
+                                                <option>Musculoskeletal</option>
+                                                <option>Respiratory</option>
+                                                <option>Other</option>
+                                       </select>
+                                 </div>
+                              </li>
+                              <li>
+                                 <div class="content">
+                                       <b><font face="Trebuchet MS" color=#FFA500 size="6">What is patient’s tertiary diagnosis?</font></b>
+                                       <br>
+                                       <br>
+                                       <br>
+                                       <br>
+                                       <select class="form-control" name="ic9Groupname3" id="ic9Groupname3">
+                                                <option>------</option>
+                                                <option>Circulatory</option>
+                                                <option>Diabetics</option>
+                                                <option>Digestive</option>
+                                                <option>Genitourinary</option>
+                                                <option>Injury</option>
+                                                <option>Musculoskeletal</option>
+                                                <option>Respiratory</option>
+                                                <option>Other</option>
+                                       </select>
+                                 </div>
+                              </li>
+                              <li>
+                                 <div class="content">
+                                       <b><font face="Trebuchet MS" color=#FFA500 size="6">Number of lab procedures done last 2 years?</font></b>
+                                       <br>
+                                       <br>
+                                       <br>
+                                       <br>
+                                       <font size="3" color="black"><input placeholder="0-100" name="num_lab_procedures" id="num_lab_procedures" type="number" class="form-control" min="0" max="100" style="text-align:center;"></font>
+                                 </div>
+                              </li>
+                              <li>
+                                 <div class="content">
+                                       <b><font face="Trebuchet MS" color=#FFA500 size="6">Number of medicines the patient is currently taking?</font></b>
+                                       <br>
+                                       <br>
+                                       <br>
+                                       <br>
+                                       <input value="1" type="hidden" name="num_procedures" id="num_procedures" type="number" class="form-control" style="text-align:center;">
+                                       <font size="3" color="black"><input placeholder="0-100" name="num_medications" id="num_medications" type="number" class="form-control" min="0" max="100" style="text-align:center;"></font>
+                                 </div>
+                              </li>
+                              <li>
+                                 <div class="content">
+                                       <b><font face="Trebuchet MS" color=#FFA500 size="6">Age of the patient?</font></b>
+                                       <br>
+                                       <br>
+                                       <br>
+                                       <br>
+                                       <select class="form-control" name="age" id="age">
+                                                <option>------</option>
+                                                <option>0-10</option>
+                                                <option>20-30</option>
+                                                <option>30-40</option>
+                                                <option>40-50</option>
+                                                <option>50-60</option>
+                                                <option>60-70</option>
+                                                <option>70-80</option>
+                                                <option>80-90</option>
+                                       </select>
+                                 </div>
+                              </li>
+                              <li>
+                                 <div class="content">
+                                       <b><font face="Trebuchet MS" color=#FFA500 size="6">Gender of the patient?</font></b>
+                                       <br>
+                                       <br>
+                                       <br>
+                                       <br>
+                                       <select class="form-control" name="gender" id="gender">
+                                                <option>------</option>
+                                                <option>Male</option>
+                                                <option>Female</option>
+                                       </select>
+                                       <input placeholder="Caucasian" name="Race" value="Caucasian" id="race" type="hidden" class="form-control" style="text-align:center;">
+                                 </div>
+                              </li>
+                              <li>
+                                 <div class="content">
+                                       <b><font face="Trebuchet MS" color=#FFA500 size="6">Was the patient discharged to home?</font></b>
+                                       <br>
+                                       <br>
+                                       <br>
+                                       <br>
+                                       <select class="form-control" name="discharge_disposition_id" id="discharge_disposition_id">
+                                                <option>------</option>
+                                                <option>Yes</option>
+                                                <option>No</option>
+                                       </select>
+                                       <input value="1" type="hidden" name="admission_type_id" id="admission_type_id" type="number" class="form-control" style="text-align:center;">
+                                 </div>
+                              </li>
+                              <li>
+                                 <div class="content">
+                                       <b><font face="Trebuchet MS" color=#FFA500 size="6">Is the patient taking any diabetic medicines?</font></b>
+                                       <br>
+                                       <br>
+                                       <br>
+                                       <br>
+                                       <select class="form-control" name="diabetesMed" id="diabetesMed">
+                                                <option>------</option>
+                                                <option>Yes</option>
+                                                <option>No</option>
+                                       </select>
+                                       <input value="0" type="hidden" name="readmitted" id="readmitted" type="text" class="form-control" style="text-align:center;">
+                                       <input value="Ch" type="hidden" name="change" id="change" type="text" class="form-control" style="text-align:center;">
+                                 </div>
+                              </li>
+                              <li>
+                                 <div class="content">
+                                       <b><font face="Trebuchet MS" color=#FFA500 size="6">Is the patient taking insulin?</font></b>
+                                       <br>
+                                       <br>
+                                       <br>
+                                       <br>
+                                       <select class="form-control" name="insulin" id="insulin">
+                                                <option>------</option>
+                                                <option>Yes</option>
+                                                <option>No</option>
+                                       </select>
+                                 </div>
+                              </li>
+                              <li>
+                                 <div class="content">
+                                       <b><font face="Trebuchet MS" color=#FFA500 size="6">Was A1RC test done within last 30 days?</font></b>
+                                       <br>
+                                       <br>
+                                       <br>
+                                       <br>
+                                       <select class="form-control" name="A1Cresult" id="A1Cresult">
+                                                <option>------</option>
+                                                <option>Yes</option>
+                                                <option>No</option>
+                                       </select>
+                                 </div>
+                              </li>                     
+                              <li>
+                                 <div class="content">
+                                       <b><font face="Trebuchet MS" color=#FFA500 size="6">How many medical procedures did the patient had in the last 2 years?</font></b>
+                                       <br>
+                                       <br>
+                                       <input value="0" type="hidden" name="number_outpatient" id="number_outpatient" type="number" class="form-control" style="text-align:center;">
+                                       <input value="0" type="hidden" name="number_emergency" id="number_emergency" type="number" class="form-control" style="text-align:center;">
+                                       <input value="0" type="hidden" name="number_inpatient" id="number_inpatient" type="number" class="form-control" style="text-align:center;">
+                                       <font size="3" color="black"><input placeholder="1-16" name="number_diagnoses" id="number_diagnoses" type="number" class="form-control" min="1" max="16" style="text-align:center;"></font>
+                                       <p class="capitalize"> <font size="3" color="red"><input type="CHECKBOX" id="CHECKBOX_3" value="...and The Other"> I have read the disclaimer</font></p>
+                                       <class="waves-effect waves-light="" btn="" waves-input-wrapper"="" style=""><input class="btn btn-outline btn-info" type="SUBMIT" value="Submit"></class="waves-effect>
+                                 </div>
+                              </li>
+                              
+                           </ul>
+                        </div>
+                        </div>
+                     </form>
+                  </div>
+               </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-6">
+               <div class="panel panel-warning">
+                  <div class="panel-heading">
+                     Learn More About Hospital Readmission
+                  </div>
+                  <!-- /.panel-heading -->
+                  <a href= "https://www.cms.gov/medicare/medicare-fee-for-service-payment/acuteinpatientpps/readmissions-reduction-program.html" target="_blank">
+                  <img src="https://s3-us-west-1.amazonaws.com/scoredata-labs/hospital%20readmission.jpg" alt="Mountain View" style="max-width:100%;
+                     max-height:100%;">
+                  </a>
+               </div>
+               </div>
+               <div class="col-lg-6">
+               <div class="panel panel-danger">
+                  <div class="panel-heading">
+                     Hospital Readmission Model Disclaimer 
+                  </div>
+                  <div class="panel-body">
+                     <p>Our hospital readmission model is not designed to and does not provide medical advice or opinions and should be used for educational and research purposes only.</p>
+                     <!--testing -->
+                     <!--testing -->
+                     <button type="button" class="btn btn-outline btn-danger btn-lg btn-block" data-toggle="modal" data-target="#myModal">Open Disclaimer</button>
+               </div>
+            </div>
+         </div>
+      </div>
+        <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"><h4>Disclaimer</h4></h4>
+        </div>
+        <div class="modal-body">
+          <p>This site does not provide medical advice. Consult your doctor for any health concerns</p>
+        </div>
+
+      </div>
+      
+    </div>
+   </div>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script src="https://s3-us-west-1.amazonaws.com/scoredata-labs/bootstrap.js"></script>
+      <script src="https://s3-us-west-1.amazonaws.com/scoredata-labs/metisMenu.js"></script>
+      <script src="https://s3-us-west-1.amazonaws.com/scoredata-labs/sb-admin-2.js"></script>
+      <script src="https://s3-us-west-1.amazonaws.com/scoredata-labs/modal.js"></script>
+      <script src="https://s3-us-west-1.amazonaws.com/scoredata-labs/myninjaslider.js"></script>
+   </body>
+</html>

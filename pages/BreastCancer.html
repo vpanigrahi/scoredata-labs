@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="">
+      <meta name="author" content="">
+
+      <title>Scoredata Labs</title>
+
+      <link href="https://s3-us-west-1.amazonaws.com/scoredata-labs/z_test_bootstrap.css" rel="stylesheet">
+      <link href="https://s3-us-west-1.amazonaws.com/scoredata-labs/z_metisMenu.css" rel="stylesheet">
+      <link href="https://s3-us-west-1.amazonaws.com/scoredata-labs/z_sb-admin-2.css" rel="stylesheet">
+      <link href="https://cdn.rawgit.com/ChiragAswani/fonts/master/font-awesome.min.css" rel="stylesheet">
+
+      <style>
+         p.capitalize {
+         text-transform: capitalize;
+         }
+      </style>
+      <script>
+         function validateForm() {
+            var x = document.forms["CancerApp"]["clump"].value;
+            var q = document.forms["CancerApp"]["cell_size"].value;
+            var w = document.forms["CancerApp"]["cell_shape"].value;
+            var e = document.forms["CancerApp"]["adhesion"].value;
+            var r = document.forms["CancerApp"]["single_cell"].value;
+            var t = document.forms["CancerApp"]["bare_nuclei"].value;
+            var y = document.forms["CancerApp"]["chromatin"].value;
+            var u = document.forms["CancerApp"]["nucleoli"].value;
+            var i = document.forms["CancerApp"]["mitoses"].value;
+            if (x == null || x == "" || x == " " || x > 10 || x < 0)
+            {
+               alert("One or more questions have been left unanswered or are not set to the required value");
+               return false;
+            }
+            if (q == null || q == "" || q == " " || q > 10 || q < 0)
+            {
+               alert("One or more questions have been left unanswered or are not set to the required value");
+               return false;
+            }
+            if (w == null || w == "" || x == " " || w > 10 || w < 0)
+            {
+               alert("One or more questions have been left unanswered or are not set to the required value");
+               return false;
+            }
+            if (e == null || e == "" || e == " " || e > 10 || e < 0)
+            {
+               alert("One or more questions have been left unanswered or are not set to the required value");
+               return false;
+            }
+            if (r == null || r == "" || r == " " || r > 10 || r < 0)
+            {
+               alert("One or more questions have been left unanswered or are not set to the required value");
+               return false;
+            }
+            if (t == null || t == "" || t == " " || t > 10 || t < 0)
+            {
+               alert("One or more questions have been left unanswered or are not set to the required value");
+               return false;
+            }
+            if (y == null || y == "" || y == " " || y > 10 || y < 1)
+            {
+               alert("One or more questions have been left unanswered or are not set to the required value");
+               return false;
+            }
+            if (u == null || u == "" || u == " " || u > 10 || u < 1)
+            {
+               alert("One or more questions have been left unanswered or are not set to the required value");
+               return false;
+            }
+            if (i == null || i == "" || i == " " || i > 10 || i < 1)
+            {
+               alert("One or more questions have been left unanswered or are not set to the required value");
+               return false;
+            }
+            if (CancerApp.CHECKBOX_3.checked == false) 
+            {
+               alert ('Please read the disclaimer');
+               return false;
+            } 
+         }
+      </script>
+
+   </head>
+   <body>
+      <div id="wrapper">
+         <!-- Navigation -->
+         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+               <span class="sr-only">Toggle navigation</span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               </button>
+               <a class="navbar-brand" href="/index">
+               <img src="https://s3-us-west-1.amazonaws.com/scoredata-labs/scoredatalogo.png" alt="" height="25" width="150">
+               </a>
+            </div>
+            
+            <div class="navbar-default sidebar" role="navigation">
+               <div class="sidebar-nav navbar-collapse">
+                  <ul class="nav" id="side-menu">
+                     <li class="sidebar-search">
+                        <div class="input-group custom-search-form">
+                           <input type="text" class="form-control" placeholder="Search...">
+                           <span class="input-group-btn">
+                           <button class="btn btn-default" type="button">
+                           <img src="https://s3-us-west-1.amazonaws.com/scoredata-labs/search.png" style="width:14px;height:14px;">
+                           </button>
+                           </span>
+                        </div>
+                        <!-- /input-group -->
+                     </li>
+                     <li>
+                        <a href="/index"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                     </li>
+                     <li>
+                        <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Healthcare<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                           <li>
+                              <a href="/diabetes">Diabetes</a>
+                           </li>
+                           <li>
+                              <a href="/BreastCancer" class="active">Breast Cancer</a>
+                           </li>
+                           <li>
+                              <a href="/hospitalreadmission">Hospital Readmission</a>
+                           </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                     </li>
+                     <li>
+                        <a href="#"><i class="fa fa-stack-overflow fa-fw"></i> Banking<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                           <li>
+                              <a href="/interestrate">Interest Rate</a>
+                           </li>
+                        </ul>
+                     </li>
+                     <li>
+                        <a href="/results">
+                        <i class="fa fa-stethoscope fa-fw">
+                        </i> Results</a>
+                     </li>
+                     <li>
+                        <a href="/aboutus">
+                        <i class="fa fa-user fa-fw">
+                        </i> About Us</a>
+                     </li>
+                  </ul>
+               </div>
+               <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+         </nav>
+         <div id="page-wrapper">
+            <div class="row">
+               <div class="col-lg-12">
+                  <h1 class="page-header">Breast Cancer</h1>
+               </div>
+               <!-- /.col-lg-12 -->
+            </div>
+            <div class="row">
+               <div class="col-lg-12">
+               <div class="panel panel-success">
+                  <div class="panel-heading">
+                     Model Description
+                  </div>
+                  <!-- /.panel-heading -->
+                  <div class="panel-body">
+                     <p>Built through Scorefast, our breast cancer model uses <a target="_blank" href="https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+(Diagnostic)">Wisconsin Breast Cancer Data </a> to predict the chances of getting diagonised with breast cancer.</p>
+                     <a target="_blank" class="btn btn-outline btn-success btn-lg btn-block" href="http://www.scoredata.com/using-machine-learning-predictive-models-for-breast-cancer-diagnosis/">View Breast Cancer Blog</a>
+                  </div>
+                  <!-- /.panel-body -->
+               </div>
+               <!-- /.panel -->
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-6">
+               <div class="panel panel-info">
+                  <div class="panel-heading">
+                     Breast Cancer Predictor
+                  </div>
+                  <!-- /.panel-heading -->
+                  <div class="panel-body">
+                     <form name="CancerApp" action="CancerApp" onsubmit="return validateForm()" method="post" class="col s12">
+                        <div class="table-responsive">
+                           <table class="table">
+                              <thead>
+                                 <tr>
+                                    <th>Item</th>
+                                    <th>Value</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr>
+                                    <td>Clump Thickness</td>
+                                    <input placeholder="Any Value" type="hidden" name="patient_id" id="patient_id" type="number" value="100">
+                                    <td><input placeholder="(0-10)" name="clump" id="clump" type="number" min="0" max="10" class="validate" style="width: 170px;"></td>
+                                 </tr>
+                                 <tr>
+                                    <td>Uniformity of Cell Size</td>
+                                    <td><input placeholder="(0-10)" name="cell_size" id="cell_size" type="number" min="0" max="10" class="validate" style="width: 170px;"></td>
+                                 </tr>
+                                 <tr>
+                                    <td>Uniformity of Cell Shape</td>
+                                    <td><input placeholder="(0-10)" name="cell_shape" id="cell_shape" type="number" min="0" max="10" class="validate" style="width: 170px;"></td>
+                                 </tr>
+                                 <tr>
+                                    <td>Marginal Adhesion</td>
+                                    <td><input placeholder="(0-10)" name="adhesion" id="adhesion" type="number" min="0" max="10" class="validate" style="width: 170px;"></td>
+                                 </tr>
+                                 <tr>
+                                    <td>Single Epithelial Cell Size</td>
+                                    <td><input placeholder="(0-10)" name="single_cell" id="single_cell" type="number" min="0" max="10" class="validate" style="width: 170px;"></td>
+                                 </tr>
+                                 <tr>
+                                    <td>Bare Nuclei</td>
+                                    <td><input placeholder="(0-10)" name="bare_nuclei" id="bare_nuclei" type="number" min="0" max="10" class="validate" style="width: 170px;"></td>
+                                 </tr>
+                                 <tr>
+                                    <td>Bland Chromatin</td>
+                                    <td><input placeholder="(1-10)" name="chromatin" id="chromatin" type="number" min="1" max="10" class="validate" style="width: 170px;"></td>
+                                 </tr>
+                                 <tr>
+                                    <td>Normal Nucleoli</td>
+                                    <td><input placeholder="(1-10)" name="nucleoli" id="nucleoli" type="number" min="1" max="10" class="validate" style="width: 170px;"></td>
+                                 </tr>
+                                 <tr>
+                                    <td>Mitoses</td>
+                                    <td><input placeholder="(1-10)" name="mitoses" id="mitoses" type="number" min="1" max="10" class="validate" style="width: 170px;"></td>
+                                    
+                                    <input placeholder="Any Value" type="hidden" name="diagnosis" id="diagnosis" type="number"" value="1">
+                                 </tr>
+                                 <tr>
+                                    <td>
+                     <input type="CHECKBOX" id="CHECKBOX_3" value="...and The Other"> I have read the disclaimer
+                     </td>
+                     <td><class="waves-effect waves-light="" btn="" waves-input-wrapper"="" style=""><input class="btn btn-outline btn-info" type="SUBMIT" value="Submit">
+                     </class="waves-effect>
+                     </form>
+                     </tr>
+                     </tbody>
+                     </table>
+                     </td>
+                     </div>
+                     <!-- /.table-responsive -->
+                  </div>
+                  <!-- /.panel-body -->
+               </div>
+               <!-- /.panel -->
+               </div>
+               <div class="col-lg-6">
+               <div class="panel panel-warning">
+                  <div class="panel-heading">
+                     Learn More About Breast Cancer
+                  </div>
+                  <!-- /.panel-heading -->
+                  <a href= "http://www.cancer.org/cancer/breastcancer" target="_blank">
+                  <img src="https://s3-us-west-1.amazonaws.com/scoredata-labs/breastcancer.jpg" alt="Mountain View" style="max-width:100%; max-height:100%;">
+                  </a>
+               </div>
+               </div>
+               <div class="col-lg-6">
+               <div class="panel panel-danger">
+                  <div class="panel-heading">
+                     Breast Cancer Model Disclaimer 
+                  </div>
+                  <div class="panel-body">
+                     <p>Our breast cancer model is not designed to and does not provide medical advice or opinions and should be used for educational and research purposes only. </p>
+                     <!--testing -->
+                     <button type="button" class="btn btn-outline btn-danger btn-lg btn-block" data-toggle="modal" data-target="#myModal">Open Disclaimer</button>
+               </div>
+            </div>
+         </div>
+      </div>
+        <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"><h4>Disclaimer</h4></h4>
+        </div>
+        <div class="modal-body">
+          <p>This site does not provide medical advice. Consult your doctor for any health concerns</p>
+        </div>
+
+      </div>
+      
+    </div>
+   </div>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script src="https://s3-us-west-1.amazonaws.com/scoredata-labs/bootstrap.js"></script>
+      <script src="https://s3-us-west-1.amazonaws.com/scoredata-labs/metisMenu.js"></script>
+      <script src="https://s3-us-west-1.amazonaws.com/scoredata-labs/sb-admin-2.js"></script>
+      <script src="https://s3-us-west-1.amazonaws.com/scoredata-labs/modal.js"></script>
+   </body>
+</html>

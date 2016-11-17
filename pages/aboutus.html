@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <title>Scoredata Labs</title>
+      
+      <link href="https://s3-us-west-1.amazonaws.com/scoredata-labs/z_test_bootstrap.css" rel="stylesheet">
+      <link href="https://s3-us-west-1.amazonaws.com/scoredata-labs/z_sb-admin-2.css" rel="stylesheet">
+      <link href="https://cdn.rawgit.com/ChiragAswani/fonts/master/font-awesome.min.css" rel="stylesheet">
+      
+      
+
+   </head>
+   <body>
+      
+      
+      <div id="wrapper">
+         <!-- Navigation -->
+         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+               <span class="sr-only">Toggle navigation</span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               </button>
+               <a class="navbar-brand" href="/index">
+               <img src="https://s3-us-west-1.amazonaws.com/scoredata-labs/scoredatalogo.png" alt="" height="25" width="150">
+               </a>
+            </div>
+            
+            <div class="navbar-default sidebar" role="navigation">
+               <div class="sidebar-nav navbar-collapse">
+                  <ul class="nav in" id="side-menu">
+                     <li class="sidebar-search">
+                        <div class="input-group custom-search-form">
+                           <input type="text" class="form-control" placeholder="Search...">
+                           <span class="input-group-btn">
+                           <button class="btn btn-default" type="button">
+                           <img src="https://s3-us-west-1.amazonaws.com/scoredata-labs/search.png" style="width:14px;height:14px;">
+                           </button>
+                           </span>
+                        </div>
+                        <!-- /input-group -->
+                     </li>
+                     <li>
+                        <a href="/index">
+                        <i class="fa fa-dashboard fa-fw">
+                        </i> Dashboard</a>
+                     </li>
+                     <li>
+                        <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Healthcare<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                           <li>
+                              <a href="/diabetes">Diabetes</a>
+                           </li>
+                           <li>
+                              <a href="/BreastCancer">Breast Cancer</a>
+                           </li>
+                           <li>
+                              <a href="/hospitalreadmission">Hospital Readmission</a>
+                           </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                     </li>
+                     <li>
+                        <a href="#"><i class="fa fa-stack-overflow fa-fw"></i> Banking<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                           <li>
+                              <a href="/interestrate">Interest Rate</a>
+                           </li>
+                        </ul>
+                     </li>
+                     <li>
+                        <a href="/results">
+                        <i class="fa fa-stethoscope fa-fw">
+                        </i> Results</a>
+                     </li>
+                     <li>
+                        <a href="/aboutus" class="active">
+                        <i class="fa fa-user fa-fw">
+                        </i> About Us</a>
+                     </li>
+                  </ul>
+               </div>
+               <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+         </nav>
+         <div id="page-wrapper" style="min-height: 587px;">
+         <div class="row">
+               <div class="col-lg-12">
+                  <h1 class="page-header">About Us</h1>
+               </div>
+               <!-- /.col-lg-12 -->
+         </div>
+           <div class="row">
+                <br>
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <img src="https://s3-us-west-1.amazonaws.com/scoredata-labs/team.png" style="max-width:100%; max-height:100%;" alt="alttext" usemap="#map" >
+
+                           <map name="map">
+                                 <area shape="rect" coords="4,2,350,430" data-toggle="modal" data-target="#simimodal" alt="alttext">
+                                 <area shape="rect" coords="570,2,920,430" data-toggle="modal" data-target="#ishanmodal" alt="alttext">
+                                 <area shape="rect" coords="1140,2,1490,430" data-toggle="modal" data-target="#chiragmodal" alt="alttext">
+                                 <area shape="rect" coords="290,550,630,905" data-toggle="modal" data-target="#renmodal" alt="alttext">
+                                 <area shape="rect" coords="910,546,1240,909" data-toggle="modal" data-target="#vasmodal" alt="alttext">
+                           </map>
+                        </div>
+                    </div>
+                </div>
+
+
+                        
+                        
+                        
+        </div>
+                
+                
+                            
+                  
+                                   
+            </div>
+         </div>
+         <!-- /#page-wrapper -->
+      </div>
+      <!-- /#wrapper -->
+      <!-- New jQuery -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script src="https://s3-us-west-1.amazonaws.com/scoredata-labs/bootstrap.js"></script>
+      <script src="https://s3-us-west-1.amazonaws.com/scoredata-labs/metisMenu.js"></script>
+      <script src="https://s3-us-west-1.amazonaws.com/scoredata-labs/sb-admin-2.js"></script>
+      <script src="https://s3-us-west-1.amazonaws.com/scoredata-labs/modal.js"></script>
+      <script src="https://cdn.rawgit.com/ChiragAswani/scoredatalabs/master/imageMapResizer.min.js"></script>
+      <script>
+      $(document).ready(function() {
+         $('map').imageMapResize();
+         });
+      </script>
+
+      <!-- Modal content-->
+      <div class="modal fade" id="simimodal" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title"><h4>Sharmila Acharya</h4></h4>
+        </div>
+        <div class="modal-body">
+          <p>Sharmila Acharya is focusing on healthcare vertical at ScoreData.</p>
+        </div>
+
+      </div>
+      
+      </div>
+    </div>
+    <div class="modal fade" id="ishanmodal" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title"><h4>Ishan Mitra</h4></h4>
+        </div>
+        <div class="modal-body">
+          <p>I am a junior at Monta Vista High School in Cupertino and an officer of my school's robotics team. As an avid programmer, I have about 4 years of experience, and enjoy programming applications in my free time. I have immensely enjoyed my time working with the ScoreData machine learning platform to create different predictive models quickly and easily. </p>
+        </div>
+
+      </div>
+      
+      </div>
+    </div>
+    <div class="modal fade" id="chiragmodal" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title"><h4>Chirag Aswani</h4></h4>
+        </div>
+        <div class="modal-body">
+          <p>As a sophmore majoring in Computer Science and Business Management at Boston University, I am interested in concentrating in Artifical Intelligence and Network Security. Currently, I contribute to labs.scoredata.com through Scorefast Model Integration and web design. </p>
+        </div>
+
+      </div>
+      
+      </div>
+    </div>
+    <div class="modal fade" id="renmodal" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title"><h4>Renata Vidovic</h4></h4>
+        </div>
+        <div class="modal-body">
+          <p>As a recent graduate from UC Davis with a double major in Biological Sciences & Civil Engineering, I am passionate about the natural sciences. While my main working knowledge lies in integrated environmental-system management, I have a broad scope of interests ranging from hydrology to healthcare. Currently, I am in the process of shifting my education to a data-analysis based track in order to broaden the application of my domain expertise. As such, my work with ScoreData involves providing a unique biological perspective on the uses of their innovative platform, while studying and learning the skills needed to continue my education in the data sciences.</p>
+        </div>
+
+      </div>
+      
+      </div>
+    </div>
+    <div class="modal fade" id="vasmodal" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title"><h4>Vasundhara Panigrahi</h4></h4>
+        </div>
+        <div class="modal-body">
+          <p>Vasundhara Panigrahi is working as a data analyst in ScoreData. She is a Master of Science in Information Systems and Operations Management from University of Florida. She has worked in the analytics field for more than 3 years and has substantial experience in statistical modelling. </p>
+        </div>
+
+      </div>
+      
+      </div>
+    </div>
+    <!-- Modal content-->
+
+
+    
+
+
+   
+</body>
+</html>
