@@ -23,6 +23,8 @@ Commands to Push to AWS:
 	sudo nohup node server.js >> /tmp/labs.log 2 >&1 &
 8. Go to labs.scoredata.com to see changes
 
+Labs Page Information:
+https://docs.google.com/document/d/1fRsW53BoIQHeXlVdrM3KO-eQCNwsNgSxNQ_xzi7F0Lk/edit#
 
 Template:
 SB-Admin Boostrap Theme
