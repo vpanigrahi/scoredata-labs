@@ -1,0 +1,28 @@
+Labs.scoredata.com uses API integration from ScoreFast.
+
+Contributors:
+-Sharmila Acharya
+-Renata Vidovic
+-Vasundhara Panigrahi
+-Ishan Mitra
+-Chirag Aswani
+
+Commands to Push to AWS:
+1. Make Tar
+	tar -czvf scoredatalabs.tar.gz labs.scoredata.aws
+2. Upload Tar to Amazon(LOCAL) to /opt/labs
+	scp -i ~/keys/website-server.pem scoredatalabs.tar.gz ec2-user@52.53.226.120:/opt/labs
+3. Access Amazon
+	demo
+4. Untar
+	tar -xvf scoredatalabs.tar.gz
+5. Kill Existing Server
+	ps -elf | grep node
+6. Go to inside untared folder	
+7. Start Server
+	sudo nohup node server.js >> /tmp/labs.log 2 >&1 &
+8. Go to labs.scoredata.com to see changes
+
+
+Template:
+SB-Admin Boostrap Theme
