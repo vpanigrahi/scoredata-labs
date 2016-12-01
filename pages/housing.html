@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <title>ScoreData Labs</title>
+      <!-- Bootstrap Core CSS -->
+      <link href="https://s3-us-west-1.amazonaws.com/scoredata-labs/z_test_bootstrap.css" rel="stylesheet">
+      <link href="https://s3-us-west-1.amazonaws.com/scoredata-labs/z_metisMenu.css" rel="stylesheet">
+      <link href="https://s3-us-west-1.amazonaws.com/scoredata-labs/z_sb-admin-2.css" rel="stylesheet">
+      <link href="https://cdn.rawgit.com/ChiragAswani/fonts/master/font-awesome.min.css" rel="stylesheet">
+      <script>
+         function validateForm() {
+            var x = document.forms["HousingApp"]["Bedroom"].value;
+            var r = document.forms["HousingApp"]["Bathrooms"].value;
+            var t = document.forms["HousingApp"]["Area"].value;
+            if (x == null || x == "" || x == " " || x < 1 || x > 10)
+            {
+               alert("One or more questions have been left unanswered or are not set to the required value");
+               return false;
+            }
+            if (r == null || r == "" || r == " " || r > 10 || r < 1)
+            {
+               alert("One or more questions have been left unanswered or are not set to the required value");
+               return false;
+            }
+            if (t == null || t == "" || t == " " || t < 0 || t > 100000)
+            {
+               alert("One or more questions have been left unanswered or are not set to the required value");
+               return false;
+            }
+            if (HousingApp.CHECKBOX_3.checked == false) 
+            {
+               alert ('Please read the disclaimer');
+               return false;
+            } 
+         }
+      </script>
+   </head>
+   <body>
+      <div id="wrapper">
+      <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+               <span class="sr-only">Toggle navigation</span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               </button>
+               <a class="navbar-brand" href="/index">
+               <img src="https://s3-us-west-1.amazonaws.com/scoredata-labs/scoredatalogo.png" alt="" height="25" width="150">
+               </a>
+            </div>
+            <div class="navbar-default sidebar" role="navigation">
+               <div class="sidebar-nav navbar-collapse">
+                  <ul class="nav" id="side-menu">
+                     <li class="sidebar-search">
+                        <div class="input-group custom-search-form">
+                           <input type="text" class="form-control" placeholder="Search...">
+                           <span class="input-group-btn">
+                           <button class="btn btn-default" type="button">
+                           <img src="https://s3-us-west-1.amazonaws.com/scoredata-labs/search.png" style="width:14px;height:14px;">
+                           </button>
+                           </span>
+                        </div>
+                     </li>
+                     <li>
+                        <a href="/index"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                     </li>
+                     <li>
+                        <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Healthcare<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                           <li>
+                              <a href="/diabetes">Diabetes</a>
+                           </li>
+                           <li>
+                              <a href="/BreastCancer">Breast Cancer</a>
+                           </li>
+                           <li>
+                              <a href="/hospitalreadmission">Hospital Readmission</a>
+                           </li>
+                        </ul>
+                     </li>
+                     <li>
+                        <a href="#"><i class="fa fa-stack-overflow fa-fw"></i> Banking<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                           <li>
+                              <a href="/interestrate">Interest Rate</a>
+                           </li>
+                           <li>
+                              <a href="/housing">Housing Prices</a>
+                           </li>
+                        </ul>
+                     </li>
+                     <li>
+                        <a href="/results">
+                        <i class="fa fa-stethoscope fa-fw">
+                        </i> Results</a>
+                     </li>
+                     <li>
+                        <a href="/aboutus">
+                        <i class="fa fa-user fa-fw">
+                        </i> About Us</a>
+                     </li>
+                  </ul>
+               </div>
+               <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+         </nav>
+      <div id="page-wrapper">
+      <div class="row">
+               <div class="col-lg-12">
+                  <h1 class="page-header">Housing Prices</h1>
+               </div>
+         <div class="row">
+            <div class="col-lg-6">
+               <div class="panel panel-info">
+                  <div class="panel-heading">
+                     Interest Rate Model
+                  </div>
+                  <div class="panel-body">
+                     <form name="HousingApp" action="HousingApp" method="post" class="col s12" onsubmit="return validateForm()">
+                              <div class="form-group">
+                                <label>Zip Code</label>
+                                <select class="form-control" name="Zipcode" id="Zipcode">
+                                    <option value="94103">94103</option>
+                                    <option value="94105">94105</option>
+                                    <option value="94107">94107</option>
+                                    <option value="94108">94108</option>
+                                    <option value="94109">94109</option>
+                                    <option value="94110">94110</option>
+                                    <option value="94111">94111</option>
+                                    <option value="94112">94112</option>
+                                    <option value="94114">94114</option>
+                                    <option value="94115">94115</option>
+                                    <option value="94116">94116</option>
+                                    <option value="94117">94117</option>
+                                    <option value="94118">94118</option>
+                                    <option value="94121">94121</option>
+                                    <option value="94122">94122</option>
+                                    <option value="94123">94123</option>
+                                    <option value="94123">94124</option>
+                                    <option value="94123">94127</option>
+                                </select>
+                            </div>
+                              <div class="form-group">
+                                 <label>Number of Bedrooms</label>
+                                 <input class="form-control" name="Bedroom" id="Bedroom" placeholder="1-10">
+                              </div>
+                              <div class="form-group">
+                                 <label>Number of Bathrooms</label>
+                                 <input class="form-control" name="Bathrooms" id="Bathrooms" placeholder="1-10">
+                              </div>
+                              <div class="form-group">
+                                 <label>Area of Household</label>
+                                 <input class="form-control" name="Area" id="Area" placeholder="0-100000">
+                                 <input class="form-control" name="larea" id="larea" placeholder="0" value="0" type="hidden">
+                                 <input class="form-control" name="Price" id="Price" placeholder="0" value="10000" type="hidden">
+                                 <input class="form-control" name="lprice" id="lprice" placeholder="0" value="0" type="hidden">
+                              </div>
+
+                            <class="waves-effect waves-light="" btn="" waves-input-wrapper"="" style=""><input class="btn btn-outline btn-info btn-lg btn-block" type="SUBMIT" value="Submit"></class="waves-effect>
+                            <center><input type="CHECKBOX" id="CHECKBOX_3" value="...and The Other"> I have read the disclaimer <center>
+                        </form>
+                       
+                        <!-- /.row (nested) -->
+                     <!-- /.panel-body -->
+                  </div>
+
+               </div>
+            </div>
+            <div class="col-lg-6">
+               <div class="panel panel-warning">
+                  <!-- /.panel-heading -->
+                  <a href="http://www.zillow.com/" target="_blank">
+                  <img src="https://s3-us-west-1.amazonaws.com/scoredata-labs/housing.jpg" alt="Mountain View" style="max-width:100%; max-height:100%;">
+                  </a>
+               </div>
+               </div>
+             <div class="col-lg-6">
+               <div class="panel panel-danger">
+                  <div class="panel-heading">
+                     Housing Disclaimer 
+                  </div>
+                  <div class="panel-body">
+                     <p>Scorefast's Housing Model uses <a target="_blank" href="https://www.lendingclub.com/info/download-data.action">NA </a> to predict the current price of a specific household. Scorefast's Housing Model should not be the basis of looking for potiential houses or a data point for negotiation.</p>
+                     <!--testing -->
+                     <a target="_blank" class="btn btn-outline btn-danger btn-lg btn-block" href="http://www.scoredata.com/blog">View Housing Blog</a>
+               </div>
+            </div>
+         </div>
+         </div>
+      </div>
+      </div>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script src="https://s3-us-west-1.amazonaws.com/scoredata-labs/bootstrap.js"></script>
+      <script src="https://s3-us-west-1.amazonaws.com/scoredata-labs/metisMenu.js"></script>
+      <script src="https://s3-us-west-1.amazonaws.com/scoredata-labs/sb-admin-2.js"></script>
+      <script src="https://s3-us-west-1.amazonaws.com/scoredata-labs/modal.js"></script>
+   </body>
+</html>

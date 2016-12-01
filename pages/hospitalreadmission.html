@@ -6,104 +6,14 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="description" content="">
       <meta name="author" content="">
-      <title>Scoredata Labs</title>
+      <title>ScoreData Labs</title>
            
       <link href="https://s3-us-west-1.amazonaws.com/scoredata-labs/z_test_bootstrap.css" rel="stylesheet">
       <link href="https://s3-us-west-1.amazonaws.com/scoredata-labs/z_metisMenu.css" rel="stylesheet">
       <link href="https://s3-us-west-1.amazonaws.com/scoredata-labs/z_sb-admin-2.css" rel="stylesheet">
       <link href="https://cdn.rawgit.com/ChiragAswani/fonts/master/font-awesome.min.css" rel="stylesheet">
       <link href="https://s3-us-west-1.amazonaws.com/scoredata-labs/myninjaslider.css" rel="stylesheet" type="text/css">
-      <script>
-         function validateForm() {
-
-            var x = document.forms["hospitalreadmission"]["time_in_hospital"].value;
-            var q = document.forms["hospitalreadmission"]["ic9Groupname"].value;
-            var w = document.forms["hospitalreadmission"]["ic9Groupname2"].value;
-            var e = document.forms["hospitalreadmission"]["ic9Groupname3"].value;
-            var r = document.forms["hospitalreadmission"]["num_lab_procedures"].value;
-            var t = document.forms["hospitalreadmission"]["num_medications"].value;
-            var y = document.forms["hospitalreadmission"]["age"].value;
-            var m = document.forms["hospitalreadmission"]["gender"].value;
-            var u = document.forms["hospitalreadmission"]["discharge_disposition_id"].value;
-            var i = document.forms["hospitalreadmission"]["diabetesMed"].value;
-            var o = document.forms["hospitalreadmission"]["insulin"].value;
-            var p = document.forms["hospitalreadmission"]["A1Cresult"].value;
-            var a = document.forms["hospitalreadmission"]["number_diagnoses"].value;
-            
-            if (x == null || x == "" || x == " " || x > 14 || x < 0 || x == "------")
-            {
-               alert("One or more questions have been left unanswered or are not set to the required value");
-               return false;
-            }
-            if (q == null || q == "" || q == " " || q == "------")
-            {
-               alert("One or more questions have been left unanswered or are not set to the required value");
-               return false;
-            }
-            if (w == null || w == "" || x == " " || w == "------")
-            {
-               alert("One or more questions have been left unanswered or are not set to the required value");
-               return false;
-            }
-            if (e == null || e == "" || e == " " || e == "------")
-            {
-               alert("One or more questions have been left unanswered or are not set to the required value");
-               return false;
-            }
-            if (r == null || r == "" || r == " " || r > 100 || r < 0 || r == "------")
-            {
-               alert("One or more questions have been left unanswered or are not set to the required value");
-               return false;
-            }
-            if (t == null || t == "" || t == " " || t > 100 || t < 0 || t == "------")
-            {
-               alert("One or more questions have been left unanswered or are not set to the required value");
-               return false;
-            }
-            if (y == null || y == "" || y == " "|| y == "------")
-            {
-               alert("One or more questions have been left unanswered or are not set to the required value");
-               return false;
-            }
-            if (m == null || t == "" || t == " " || t == "------")
-            {
-               alert("One or more questions have been left unanswered or are not set to the required value");
-               return false;
-            }
-            if (u == null || u == "" || u == " " || u == "------")
-            {
-               alert("One or more questions have been left unanswered or are not set to the required value");
-               return false;
-            }
-            if (i == null || i == "" || i == " " || i == "------")
-            {
-               alert("One or more questions have been left unanswered or are not set to the required value");
-               return false;
-            }
-            if (o == null || o == "" || o == " " || o == "------")
-            {
-               alert("One or more questions have been left unanswered or are not set to the required value");
-               return false;
-            }
-            if (p == null || p == "" || p == " " || p == "------")
-            {
-               alert("One or more questions have been left unanswered or are not set to the required value");
-               return false;
-            }
-            if (a == null || u == "" || u == " " || u > 16 || u < 1 || u == "------")
-            {
-               alert("One or more questions have been left unanswered or are not set to the required value");
-               return false;
-            }
-            if (hospitalreadmission.CHECKBOX_3.checked == false) 
-            {
-               alert ('Please read the disclaimer');
-               return false;
-            } 
-            
-         }
-      </script>
-
+      
 
    </head>
 
@@ -158,6 +68,9 @@
                            <li>
                               <a href="/interestrate">Interest Rate</a>
                            </li>
+                           <li>
+                              <a href="/housing">Housing Prices</a>
+                           </li>
                         </ul>
                      </li>
                      <li>
@@ -182,22 +95,6 @@
                   <h1 class="page-header">Hospital Readmission</h1>
                </div>
                <!-- /.col-lg-12 -->
-            </div>
-            <div class="row">
-               <div class="col-lg-12">
-               <div class="panel panel-success">
-                  <div class="panel-heading">
-                     Model Description
-                  </div>
-                  <!-- /.panel-heading -->
-                  <div class="panel-body">
-                     <p>Built through Scorefast, our hospital readmission model uses data from <a target="_blank" href="https://archive.ics.uci.edu/ml/datasets/Diabetes+130-US+hospitals+for+years+1999-2008">Virginia Commonwealth University</a> to predict the chances of get readmitted to a hospital.</p>
-                     <a target="_blank" class="btn btn-outline btn-success btn-lg btn-block" href="http://www.scoredata.com/predicting-hospital-readmission-rates-for-diabetic-patients-part-2/">View Hospital Readmission Blog</a>
-                  </div>
-                  <!-- /.panel-body -->
-               </div>
-               <!-- /.panel -->
-               </div>
             </div>
             <div class="row">
                <div class="col-lg-12">
@@ -423,9 +320,6 @@
             <div class="row">
                <div class="col-lg-6">
                <div class="panel panel-warning">
-                  <div class="panel-heading">
-                     Learn More About Hospital Readmission
-                  </div>
                   <!-- /.panel-heading -->
                   <a href= "https://www.cms.gov/medicare/medicare-fee-for-service-payment/acuteinpatientpps/readmissions-reduction-program.html" target="_blank">
                   <img src="https://s3-us-west-1.amazonaws.com/scoredata-labs/hospital%20readmission.jpg" alt="Mountain View" style="max-width:100%;
@@ -439,10 +333,10 @@
                      Hospital Readmission Model Disclaimer 
                   </div>
                   <div class="panel-body">
-                     <p>Our hospital readmission model is not designed to and does not provide medical advice or opinions and should be used for educational and research purposes only.</p>
+                     <p>Scorefast's Hospital Readmission model uses data from <a target="_blank" href="https://archive.ics.uci.edu/ml/datasets/Diabetes+130-US+hospitals+for+years+1999-2008">Virginia Commonwealth University</a> to predict the chances of get readmitted to a hospital. Scorefast's Hospital Readmission Model is not designed to and does not provide medical advice or opinions and should be used for educational and research purposes only. If you have any health concerns or questions, please call your doctor.</p>
                      <!--testing -->
                      <!--testing -->
-                     <button type="button" class="btn btn-outline btn-danger btn-lg btn-block" data-toggle="modal" data-target="#myModal">Open Disclaimer</button>
+                     <a target="_blank" class="btn btn-outline btn-danger btn-lg btn-block" href="http://www.scoredata.com/predicting-hospital-readmission-rates-for-diabetic-patients-part-2/">View Hospital Readmission Blog</a>
                </div>
             </div>
          </div>

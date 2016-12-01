@@ -1,3 +1,5 @@
+
+
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
@@ -5,6 +7,9 @@ var path = require('path');
 var request =  require('request');
 
 var score;
+var lp;
+var adjustment = 1000;
+var p;
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -43,6 +48,10 @@ app.get('/aboutus', function(req, res) {
 
 app.get('/interestrate', function(req, res) {
   res.sendFile(path.join(__dirname + '/interestrate.html'));
+});
+
+app.get('/housing', function(req, res) {
+  res.sendFile(path.join(__dirname + '/housing.html'));
 });
 
 
@@ -183,6 +192,44 @@ app.post('/InterestApp', function(req, res) {
     res.sendFile(path.join(__dirname + '/interestrateresults.html'));
   });
 });
+
+//post request from housing.html
+app.post('/housingApp', function(req, res) {
+  var data = req.body;
+  var m = Math.log(req.body.Area);
+  data.larea = m;
+  request({
+    url: 'http://user1@demo.com:scoredata1234@console.scoredata.com/api/score/',
+    method: 'POST',
+    headers: {
+       'Content-Type': "application/json"
+    },
+    json: true,
+    body: {
+      'app_id': "5768e76ead0e11e6b6bb06f4115cbc5d",
+      "feature_data": data.Zipcode+','+data.Bedroom+','+data.Bathrooms+','+data.Area+',m,'+data.Price+','+data.lprice,
+      'debug_mode': '1' 
+    }
+  },function(err, response, body) {
+    lp = body.data.predict_score_response.predictions[0].predicted;
+    p = Math.pow(2.7182818284590452353602874713527,lp);
+    score = p + adjustment
+    console.log(data);
+    console.log(body);
+    console.log(body.data.predict_score_response.predictions);
+    console.log(body.data.predict_score_response.model);
+    console.log("Pre Score: " + lp);
+    console.log("Post Score: " + score);
+
+    res.sendFile(path.join(__dirname + '/housingresults.html'));
+  });
+});
+
+
+
+
+
+
 
 app.get('/sendFeatures', function(req, res) {
   res.send({

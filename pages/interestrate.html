@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="description" content="">
       <meta name="author" content="">
-      <title>SB Admin 2 - Bootstrap Admin Theme</title>
+      <title>ScoreData Labs</title>
       <!-- Bootstrap Core CSS -->
       <link href="https://s3-us-west-1.amazonaws.com/scoredata-labs/z_test_bootstrap.css" rel="stylesheet">
       <link href="https://s3-us-west-1.amazonaws.com/scoredata-labs/z_metisMenu.css" rel="stylesheet">
@@ -102,6 +102,9 @@
                            <li>
                               <a href="/interestrate">Interest Rate</a>
                            </li>
+                           <li>
+                              <a href="/housing">Housing Prices</a>
+                           </li>
                         </ul>
                      </li>
                      <li>
@@ -125,22 +128,6 @@
                <div class="col-lg-12">
                   <h1 class="page-header">Interest Rate</h1>
                </div>
-      <div class="row">
-               <div class="col-lg-12">
-               <div class="panel panel-success">
-                  <div class="panel-heading">
-                     Model Description
-                  </div>
-                  <!-- /.panel-heading -->
-                  <div class="panel-body">
-                     <p>Built through Scorefast, our interest rate model uses <a target="_blank" href="https://www.lendingclub.com/info/download-data.action">Lending Club Data </a> to predict the user's interest rate on a loan.</p>
-                     <a target="_blank" class="btn btn-outline btn-success btn-lg btn-block" href="http://www.scoredata.com/blog">View Interest Rate Blog</a>
-                  </div>
-                  <!-- /.panel-body -->
-               </div>
-               <!-- /.panel -->
-               </div>
-            </div>
          <div class="row">
             <div class="col-lg-12">
                <div class="panel panel-info">
@@ -151,7 +138,7 @@
                      <div class="row">
                      <form name="InterestApp" action="InterestApp" onsubmit="return validateForm()" method="post" class="col s12">
                         <div class="col-lg-6">
-                              <input type="hidden" class="form-control" name="id" id="id" value="0">
+			      <input type="hidden" class="form-control" name="id" id="id" value="0">
                               <input type="hidden" class="form-control" name="member_id" id="member_id" value="0">
                               <div class="form-group">
                                  <label>Loan Amount</label>
@@ -309,22 +296,29 @@
 
                </div>
                <div class="row">
-               <div class="col-lg-12">
+               <div class="col-lg-6">
+               <div class="panel panel-warning">
+                  <!-- /.panel-heading -->
+                  <a href= "http://www.bankrate.com/finance/mortgages/current-interest-rates.aspx" target="_blank">
+                  <img src="https://s3-us-west-1.amazonaws.com/scoredata-labs/interestrate.jpg" alt="Mountain View" style="max-width:100%;
+                     max-height:100%;">
+                  </a>
+               </div>
+               </div>
+               <div class="col-lg-6">
                <div class="panel panel-danger">
                   <div class="panel-heading">
                      Interest Rate Disclaimer
                   </div>
                   <!-- /.panel-heading -->
                   <div class="panel-body">
-                     <p>Our Interest Rate Model does not and should not be the basis of a future interest on a given loan for a user.</p>
-                     <a target="_blank" class="btn btn-outline btn-danger btn-lg btn-block" href="http://www.bankrate.com/finance/mortgages/current-interest-rates.aspx">Learn More About Interest Rates</a>
+                     <p>Scorefast's Interest Rate Model uses <a target="_blank" href="https://www.lendingclub.com/info/download-data.action">Lending Club Data </a> to predict the user's interest rate on a loan. Scorefast's Interest Rate Model does not and should not be the basis of a future interest on a given loan for a user.</p>
+                     <a target="_blank" class="btn btn-outline btn-danger btn-lg btn-block" href="http://www.scoredata.com/blog">View Interest Rate Blog</a>
                   </div>
                   <!-- /.panel-body -->
                </div>
                <!-- /.panel -->
                </div>
-            </div>
-            </div>
          </div>
       </div>
       </div>

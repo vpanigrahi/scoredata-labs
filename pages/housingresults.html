@@ -7,7 +7,7 @@
       <meta name="description" content="">
       <meta name="author" content="">
       <title>ScoreData Labs</title>
-      <!-- Bootstrap Core CSS(../vendor/bootstrap/css/bootstrap.min.css) -->
+
       <link href="https://s3-us-west-1.amazonaws.com/scoredata-labs/z_test_bootstrap.css" rel="stylesheet">
       <link href="https://s3-us-west-1.amazonaws.com/scoredata-labs/z_metisMenu.css" rel="stylesheet">
       <link href="https://s3-us-west-1.amazonaws.com/scoredata-labs/z_sb-admin-2.css" rel="stylesheet">
@@ -93,15 +93,15 @@
          <div id="page-wrapper">
             <div class="row">
                <div class="col-lg-12">
-                  <h1 class="page-header">Diabetes Results</h1>
+                  <h1 class="page-header">Housing Prices Results</h1>
                </div>
                <!-- /.col-lg-12 -->
             </div>
             <div class="col-lg-12">
                <br>
-               <div class="alert alert-danger">
+               <div class="alert alert-success">
                   <center>
-                     <h1 id="prediction">Scorefast's predictor shows the patient or user is likely to have diabetes</h1>
+                     <h1 id="prediction">Scorefast's predictor shows the average price of a house would be</h1>
                      <h1 id="score"></h1>
                      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
       <script>
@@ -109,19 +109,21 @@
            $.get('/sendFeatures', function(res) {
              console.log("Score recieved: " + res.score);
              if(res.score*100 >= 60 && res.score*100 < 70) {
-               $('#prediction').text("Scorefast's predictor shows the patient or user is likely to have diabetes");
+               $('#prediction').text("Scorefast's predictor shows the average price of a house would be");
              } else if(res.score*100 >= 70 && res.score*100 < 80) {
-               $('#prediction').text("Scorefast's predictor shows the patient or user is likely to have diabetes");
+               $('#prediction').text("Scorefast's predictor shows the average price of a house would be");
              } else if(res.score*100 >= 80 && res.score*100 < 90) {
-               $('#prediction').text("Scorefast's predictor shows the patient or user is likely to have diabetes");
+               $('#prediction').text("Scorefast's predictor shows the average price of a house would be");
              } else if(res.score*100 >= 90){
-               $('#prediction').text("Scorefast's predictor shows the patient or user is likely to have diabetes");
+               $('#prediction').text("Scorefast's predictor shows the average price of a house would be");
              }
-             $('#score').text("Accuracy: " + (res.score * 100).toFixed(2) + "%")
+             $('#score').text("$"+ (res.score).toFixed(2))
            });
+         
          });
-      </script>
-   </center>
+   
+                     </script>
+                  </center>
                   <p>
                   </p>
                </div>
@@ -131,7 +133,6 @@
          <!-- /#page-wrapper -->
       </div>
       <!-- /#wrapper -->
-      <!-- New jQuery -->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
       <script src="https://s3-us-west-1.amazonaws.com/scoredata-labs/bootstrap.js"></script>
       <script src="https://s3-us-west-1.amazonaws.com/scoredata-labs/metisMenu.js"></script>
