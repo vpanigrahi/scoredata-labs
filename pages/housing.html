@@ -90,6 +90,11 @@
                            <li>
                               <a href="/interestrate">Interest Rate</a>
                            </li>
+                        </ul>
+                     </li>
+                     <li>
+                        <a href="#"><i class="fa fa-home fa-fw"></i> Real Estate<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
                            <li>
                               <a href="/housing">Housing Prices</a>
                            </li>
@@ -118,13 +123,11 @@
                </div>
          <div class="row">
             <div class="col-lg-6">
-               <div class="panel panel-info">
-                  <div class="panel-heading">
-                     Interest Rate Model
-                  </div>
+               <div class="panel panel-default">
                   <div class="panel-body">
-                     <form name="HousingApp" action="HousingApp" method="post" class="col s12" onsubmit="return validateForm()">
-                              <div class="form-group">
+                  <form name="HousingApp" action="HousingApp" method="post" class="col s12" onsubmit="return validateForm()">
+
+                  <div class="form-group">
                                 <label>Zip Code</label>
                                 <select class="form-control" name="Zipcode" id="Zipcode">
                                     <option value="94103">94103</option>
@@ -143,17 +146,30 @@
                                     <option value="94121">94121</option>
                                     <option value="94122">94122</option>
                                     <option value="94123">94123</option>
-                                    <option value="94123">94124</option>
-                                    <option value="94123">94127</option>
+                                    <option value="94124">94124</option>
+                                    <option value="94127">94127</option>
                                 </select>
                             </div>
+                  </div>
+               </div>
+               <div class="panel panel-info">
+                  <div class="panel-heading">
+                     Interest Rate Model
+                  </div>
+                  <div class="panel-body">
+                     
+                              
                               <div class="form-group">
                                  <label>Number of Bedrooms</label>
                                  <input class="form-control" name="Bedroom" id="Bedroom" placeholder="1-10">
                               </div>
                               <div class="form-group">
-                                 <label>Number of Bathrooms</label>
-                                 <input class="form-control" name="Bathrooms" id="Bathrooms" placeholder="1-10">
+                                 <label>Number of Half Bathrooms</label>
+                                 <input class="form-control" name="half_bathrooms" id="half_bathrooms" placeholder="0-10">
+                              </div>
+                              <div class="form-group">
+                                 <label>Number of Full Bathrooms</label>
+                                 <input class="form-control" name="full_bathrooms" id="full_bathrooms" placeholder="1-10">
                               </div>
                               <div class="form-group">
                                  <label>Area of Household</label>
@@ -174,6 +190,35 @@
                </div>
             </div>
             <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a href="#home" data-toggle="tab">Description</a>
+                                </li>
+                                <li><a href="#profile" data-toggle="tab">Disclaimer</a>
+                                </li>
+                                <li><a href="#messages" data-toggle="tab">Blog</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane fade in active" id="home">
+                                    <h4>Housing Model Description</h4>
+                                    <p>Scorefast's Housing Model uses <a target="_blank" href="http://www.mls.com/search/california.mvc">America's Real Estate Portal </a> to predict the current price of a specific household.</p>
+                                </div>
+                                <div class="tab-pane fade" id="profile">
+                                    <h4>Housing Model Disclaimer</h4>
+                                    <p>Scorefast's Housing Model should not be the basis of looking for potiential houses or a data point for negotiation.</p>
+                                </div>
+                                <div class="tab-pane fade" id="messages">
+                                    <h4>Housing Model Blog</h4>
+                                    <br>
+                                    <a target="_blank" class="btn btn-outline btn-default btn-lg btn-block" href="http://www.scoredata.com/blog">View Housing Blog</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+            <div class="col-lg-6">
                <div class="panel panel-warning">
                   <!-- /.panel-heading -->
                   <a href="http://www.zillow.com/" target="_blank">
@@ -181,18 +226,7 @@
                   </a>
                </div>
                </div>
-             <div class="col-lg-6">
-               <div class="panel panel-danger">
-                  <div class="panel-heading">
-                     Housing Disclaimer 
-                  </div>
-                  <div class="panel-body">
-                     <p>Scorefast's Housing Model uses <a target="_blank" href="https://www.lendingclub.com/info/download-data.action">NA </a> to predict the current price of a specific household. Scorefast's Housing Model should not be the basis of looking for potiential houses or a data point for negotiation.</p>
-                     <!--testing -->
-                     <a target="_blank" class="btn btn-outline btn-danger btn-lg btn-block" href="http://www.scoredata.com/blog">View Housing Blog</a>
-               </div>
-            </div>
-         </div>
+             
          </div>
       </div>
       </div>

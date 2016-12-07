@@ -1,5 +1,3 @@
-
-
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
@@ -196,6 +194,12 @@ app.post('/InterestApp', function(req, res) {
 //post request from housing.html
 app.post('/housingApp', function(req, res) {
   var data = req.body;
+  var b = parseInt(req.body.full_bathrooms) + parseInt(((req.body.half_bathrooms)/2));
+  data.Bathrooms = b;
+  console.log("full_bathrooms" + req.body.full_bathrooms);
+  console.log("half_bathrooms" + req.body.half_bathrooms);
+  console.log("b" + b);
+  console.log("data.Bathrooms" + data.Bathrooms);
   var m = Math.log(req.body.Area);
   data.larea = m;
   request({
